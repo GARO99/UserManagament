@@ -1,0 +1,10 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Agregar Usuario";
+}
+<div class="container">
+    <div class="text-center mb-3">
+        <h1 class="display-4">Agregar usuario</h1>
+    </div>
+    @await Html.PartialAsync("UserForm", Model)
+</div>

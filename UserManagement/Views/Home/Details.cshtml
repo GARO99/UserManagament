@@ -1,0 +1,30 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Detalles del Usuario";
+}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Datos del usuario</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Nombre:</strong> @Model.FirstName @Model.LastName</p>
+                    <p><strong>Correo electrónico:</strong> @Model.Email</p>
+                    <p><strong>Teléfono:</strong> @Model.Phone</p>
+                    <p><strong>Fecha de nacimiento:</strong> @Model.Birthdate.ToShortDateString()</p>
+                </div>
+                <div class="col-md-6">
+                    @if (Model.AvatarImg != null)
+                    {
+                        <img src="data:image;base64,@Model.AvatarImgBase64" class="img-fluid" alt="Avatar del usuario" />
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a asp-controller="Home" asp-action="" class="btn btn-primary">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
